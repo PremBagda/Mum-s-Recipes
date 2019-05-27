@@ -18,17 +18,61 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <title>Mum's Recipes</title>
-
     <!-- FIREBASE functionality -->
-    <script defer src="/__/firebase/6.0.4/firebase-app.js"></script>
+    <script defer src="/__/firebase/5.0.4/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/6.0.4/firebase-auth.js"></script>
-    <script defer src="/__/firebase/6.0.4/firebase-database.js"></script>
-    <script defer src="/__/firebase/6.0.4/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/6.0.4/firebase-storage.js"></script>
+    <script defer src="/__/firebase/5.0.4/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.0.4/firebase-database.js"></script>
+    <script defer src="/__/firebase/5.0.4/firebase-storage.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDO_g-WNcihGvWpwLJs-SsvHFSSWouMY_8",
+        authDomain: "mum-s-recipe.firebaseapp.com",
+        databaseURL: "https://mum-s-recipe.firebaseio.com",
+        projectId: "mum-s-recipe",
+        storageBucket: "mum-s-recipe.appspot.com",
+        messagingSenderId: "319594133425"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <script type="text/javascript">
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+      // The start method will wait until the DOM is loaded.
+      // ui.start('#firebaseui-auth-container', uiConfig);
+      ui.start('#firebaseui-auth-container', {
+        signInSuccessUrl: 'mumsrecipes.html',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          // firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          // firebase.auth.EmailAuthProvider.PROVIDER_ID
+          {
+            provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            scopes: [
+              'https://www.googleapis.com/auth/plus.login'
+            ],
+            customParameters: {
+              // Forces account selection even when one account
+              // is available.
+              prompt: 'select_account'
+            }
+          }
+          // firebase.auth.EmailAuthProvider.PROVIDER_ID,
+
+        ]
+      });
+      ui.disableAutoSignIn();
+    </script>
+
+    <title>Mum's Recipes Login</title>
 
   </head>
   <body>
@@ -41,6 +85,9 @@
             <!-- Mum's Recipes Banner -->
             <br /> <br /> <br /> <br /> <br />
             <h1 class="main-banner text-center">Mum's Recipes</h1>
+
+            <!-- Google Login Portion -->
+            <div id="firebaseui-auth-container"></div>
           </div>
         </div>
       </div>
