@@ -1,10 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <!-- Default to include -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles/main-page-styling.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <!-- End of Default to include -->
+
+    <!-- For the use of md forms------------------------------------>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- For the use of log out icon -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap (mdbootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+    <!---------------------------------------------------------------------------------------------------->
+
+
+    <!-- Dynamic functionality -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
     <title>Mum's Recipes</title>
 </head>
-<body>
-    <p>You have successfully logged into Mum's Recipes Website!</p>
+
+<body style="background-color: black;">
+    <!-- mdbootstrap Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <!-- Navbar brand: Cultery Icon -->
+        <a class="navbar-brand glyphicon glyphicon-cutlery" href=""></a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button"
+                data-toggle="collapse" data-target="#collapsibleContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="collapsibleContent">
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item active">
+                    <form class="form-inline">
+                        <!-- Search Bar -->
+                        <div class="md-form my-0 search-bar">
+                            <input class="form-control mr-sm-2" type="text" value="" name="search"
+                                   style="font-size: 16px;" autocomplete="off" placeholder="Search">
+                        </div>
+                    </form>
+                </li>
+
+                <!-- Add Recipe -->
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="modal">
+                        Add Recipe<span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <!-- Add Cuisine -->
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#modalCuisineForm">Add Cuisine</a>
+                </li>
+
+                <!-- Add Meal Type -->
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#modalMealForm">Add Meal Type</a>
+                </li>
+
+            </ul>
+
+            <!-- Logout Button -->
+            <ul class="navbar-nav navbar-right">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown"></a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" style="font-size: 14px;"><i class="fas fa-sign-out-alt"></i> logout</a>
+                    </div>
+                </li>
+            </ul>
+
+        </div> <!-- END Collapsible content -->
+
+
+    </nav>
 </body>
+
+<!-- For the use of md forms -->
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
+<!---------------------------------------------------------------------------------------------------->
+
+<!-- Default scripts to include -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 </html>

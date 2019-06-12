@@ -1,0 +1,16 @@
+/* Main navigation bar settings. */
+.navbar {
+    height: 55px !important;
+    font-size: 16px;
+    background-color: #c62828;
+    color: #c62828;
+}
+
+.navbar-collapse {
+    background-color: #c62828;
+}
+
+.glyphicon.glyphicon-cutlery {
+    font-size: 30px;
+    margin-bottom: 4px;
+}
