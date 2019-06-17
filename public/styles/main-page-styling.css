@@ -14,3 +14,14 @@
     font-size: 30px;
     margin-bottom: 4px;
 }
+
+/* Table data font sizing*/
+.family-table {
+    font-size: 16px;
+}
+
+.header-color {
+    background-color: black;
+    font-family: 'lobster';
+    color: red;
+}
