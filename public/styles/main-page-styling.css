@@ -15,7 +15,7 @@
     margin-bottom: 4px;
 }
 
-/* Table data font sizing*/
+/* Font sizing for data in table. */
 .family-table {
     font-size: 16px;
 }
@@ -24,4 +24,51 @@
     background-color: black;
     font-family: 'lobster';
     color: red;
+}
+
+/* Add recipe: Cook time & prep time settings. */
+.recipe-cook-and-prep-time {
+    height: 24px;
+}
+
+.rating-panel {
+    font-family: 'lobster';
+    font-size: 14px;
+    color: red;
+}
+
+/* Add Recipe: input label*/
+#photo-input-label {
+    color: white;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+#photo-input-label:hover {
+    background: #26a69a;
+    cursor: pointer;
+}
+
+/* Add Recipe: input file selection*/
+#file {
+    visibility: hidden;
+    width: 1px;
+}
+
+/* Add Recipe: input file selection*/
+#fa-upload-icon {
+    margin-right: 10px;
+}
+
+#add-cuisine-form {
+    font-size: 16px;
+}
+
+#add-meal-type-form {
+    font-size: 16px;
+}
+
+/*Add Recipe: Method*/
+.method {
+    white-space: pre-wrap;
 }

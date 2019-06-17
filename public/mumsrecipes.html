@@ -28,8 +28,7 @@
     <!-- Dynamic functionality -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-
-
+    
     <title>Mum's Recipes</title>
 </head>
 
@@ -62,7 +61,7 @@
 
                 <!-- Add Recipe -->
                 <li class="nav-item">
-                    <a class="nav-link active" data-toggle="modal">
+                    <a class="nav-link active" data-target="#modalAddRecipe" data-toggle="modal">
                         Add Recipe<span class="sr-only">(current)</span>
                     </a>
                 </li>
@@ -156,15 +155,15 @@
                     <div class="modal-header text-center header-color">
                         <h4 class="title w-100"><i class="fa fa-pencil-alt"></i> Add Cuisine</h4>
                         <button type="button" class="close" style="color: white;" data-dismiss="modal">
-                            <span aria-hidden="true">&times;</span>
+                            <span>&times;</span>
                         </button>
                     </div>
 
                     <div class="modal-body mx-3">
                         <div class="md-form mb-5">
                             <i class="glyphicon glyphicon-cutlery prefix grey-text"></i>
-                            <input type="text" id="defaultForm-cuisine" class="form-control form-control-lg">
-                            <label for="defaultForm-cuisine">Cuisine Name</label>
+                            <input type="text" id="add-cuisine-form" class="form-control form-control-lg">
+                            <label for="add-cuisine-form">Cuisine Name</label>
                         </div>
                     </div>
 
@@ -180,7 +179,7 @@
         </div>
         <!-- END Add Cuisine Modal  -->
 
-        <!--  Adding Meal type Modal -->
+        <!-- Adding Meal type Modal -->
         <div class="modal fade" id="modalAddMealtype" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -188,15 +187,15 @@
                     <div class="modal-header text-center header-color">
                         <h4 class="title w-100"><i class="fa fa-pencil-alt"></i> Add Meal Type</h4>
                         <button type="button" class="close" style="color: white;" data-dismiss="modal">
-                            <span aria-hidden="true">&times;</span>
+                            <span>&times;</span>
                         </button>
                     </div>
 
                     <div class="modal-body mx-3">
                         <div class="md-form mb-5">
                             <i class="glyphicon glyphicon-cutlery prefix grey-text"></i>
-                            <input type="text" id="defaultForm-meal" class="form-control validate">
-                            <label for="defaultForm-meal">Meal Type</label>
+                            <input type="text" id="add-meal-type-form" class="form-control validate">
+                            <label for="add-meal-type-form">Meal Type</label>
                         </div>
                     </div>
 
@@ -211,6 +210,206 @@
             </div>
         </div>
         <!-- END Add MealType  -->
+
+        <!--  Add Recipe Modal -->
+        <div class="modal fade" id="modalAddRecipe" tabindex="-1" role="dialog">
+            <!--Modal: Contact form-->
+            <div class="modal-dialog modal-lg" role="document">
+                <!--Content-->
+                <div class="modal-content">
+
+                    <!--Header-->
+                    <div class="modal-header text-center header-color">
+                        <p class="title w-100" style="font-size: 18px;">
+                            <i class="fa fa-pencil-alt"></i>Add Recipe</p>
+                        <button type="button" class="close waves-effect waves-light" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="modal-body row">
+                        <div class="col-lg-6">
+
+                            <!-- Recipe Name -->
+                            <label for="recipe_name">Recipe Name</label>
+                            <input type="text" id="recipe_name" class="form-control" maxlength="62" autofocus>
+
+                            <!-- Dish Type -->
+                            <br />
+                            <div class="panel panel-primary">
+                                <div class="panel-heading btn-elegant text-center" style="font-family: 'lobster'; font-size:14px; ">Details</div>
+                                <div class="panel-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+
+                                            <!-- Recipe Form - Dish Type -->
+                                            <label class="control-label col-xs-2 text-left" for="dish_type">Dish:</label>
+                                            <div class="col-xs-4">
+                                                <select class="form-control" id="dish_type">
+                                                    <option>Non-veg</option>
+                                                    <option>Veg</option>
+                                                </select>
+                                            </div>
+
+                                            <!-- Recipe Form - Meal Type -->
+                                            <label class="control-label col-xs-2 text-left" for="meal_types_choices">Meal:</label>
+                                            <div class="col-xs-4">
+                                                <select class="form-control" id="meal_types_choices">
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <!-- Recipe Form - Servings -->
+                                            <label class="control-label col-xs-3 text-left" for="servings">Servings:</label>
+                                            <div class="col-xs-3">
+                                                <input class="form-control" style="height: 24px;" type="number" min="1" max="500" value="20" id="servings">
+                                            </div>
+
+                                            <!-- Recipe Form - Cuisine -->
+                                            <label class="control-label col-xs-2 text-left" for="cuisine_choices">Cuisine:</label>
+                                            <div class="col-xs-4">
+                                                <select class="form-control" id="cuisine_choices">
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <!-- Recipe Form - Cooking Time -->
+                                            <label class="control-label col-xs-3 text-left" for="cooking_time" style="font-size: 14px;">Cook. <span class="far fa-clock"></span>: </label>
+                                            <div class="col-xs-3">
+                                                <input class="form-control recipe-cook-and-prep-time" type="number" min="1" max="900" value="15" id="cooking_time">
+                                            </div>
+
+                                            <!-- Recipe Form - Prep Time -->
+                                            <label class="control-label col-xs-3 text-left" for="prep_time">Prep. <span class="far fa-clock"></span>:</label>
+                                            <div class="col-xs-3">
+                                                <input class="form-control recipe-cook-and-prep-time" type="number" min="1" max="900" value="15" id="prep_time">
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+
+
+                            <!-- Ratings -->
+                            <div class="panel panel-primary">
+                                <div class="panel-heading btn-elegant text-center rating-panel">Ratings <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+
+                                <!-- Family Members -->
+                                <div class="panel-body">
+                                    <form class="form-horizontal">
+
+                                        <!-- Group Family members by 2-->
+                                        <div class="form-group">
+                                            <label class="control-label col-xs-2" for="abhay">Abhay:</label>
+                                            <div class="col-xs-4">
+                                                <select class="form-control" id="abhay">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                            <label class="control-label col-xs-2" for="prem">Prem:</label>
+                                            <div class="col-xs-4">
+                                                <select class="form-control" id="prem">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <!-- Group Family members by 2-->
+                                        <div class="form-group">
+                                            <label class="control-label col-xs-2" for="rajesh">Rajesh:</label>
+                                            <div class="col-xs-4">
+                                                <select class="form-control" id="rajesh">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                            <label class="control-label col-xs-2" for="usha">Usha:</label>
+                                            <div class="col-xs-4">
+                                                <select class="form-control" id="usha">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.col -->
+
+                        <div class="col-lg-6">
+
+                            <!-- Ingredients -->
+                            <div class="form-group">
+                                <label for="ingredients">Ingredients:</label>
+                                <textarea class="form-control" rows="8" id="ingredients" placeholder="Write each ingredient on a newline..."></textarea>
+                            </div>
+
+                            <!-- Method -->
+                            <div class="form-group">
+                                <label for="method">Method:</label>
+                                <textarea class="form-control" rows="8" id="method" placeholder="Write each step of the method on a newline..."></textarea>
+                            </div>
+
+                            <!-- Additional Notes -->
+                            <div class="form-group">
+                                <label for="notes">Additional Notes:</label>
+                                <textarea class="form-control" rows="2" id="notes" placeholder="Write any additional notes here..."></textarea>
+                            </div>
+
+                            <!-- Photo uploading selection -->
+                            <form class="text-center">
+                                <label class="btn-elegant" id="photo-input-label" for="file">
+                                    <i class="fa fa-upload fa-upload-icon"></i>
+                                    <span id="photo-select-label">Select photo to upload</span></label>
+                                <input id="file" type="file" accept='image/*' />
+                            </form>
+
+                        </div>
+                        <!-- /.col -->
+
+                        <div class="modal-footer col-xs-12"></div>
+
+                        <div class="col-xs-12 text-center">
+                            <button type="button" class="btn btn-primary" id="recipe-btn-add" value="Add">Add</button>
+                            <button type="button" class="btn btn-light" id="recipe-btn-cancel" data-dismiss="modal">Cancel</button>
+                        </div>
+
+                    </div>
+                    <!-- /.row .modal-body-->
+                </div>
+                <!--/.Content-->
+            </div>
+            <!--/Modal: Recipe Form -->
+        </div>
+        <!-- END Add Recipe Modal -->
 
     </nav>
 </body>
