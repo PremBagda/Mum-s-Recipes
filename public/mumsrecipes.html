@@ -69,12 +69,12 @@
 
                 <!-- Add Cuisine -->
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" data-target="#modalCuisineForm">Add Cuisine</a>
+                    <a class="nav-link" data-toggle="modal" data-target="#modalAddCuisine">Add Cuisine</a>
                 </li>
 
                 <!-- Add Meal Type -->
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="modal" data-target="#modalMealForm">Add Meal Type</a>
+                    <a class="nav-link" data-toggle="modal" data-target="#modalAddMealtype">Add Meal Type</a>
                 </li>
 
             </ul>
@@ -95,7 +95,7 @@
         </div>
         <!-- END Collapsible content -->
 
-        <!--  Family Management Modal  -->
+        <!-- Family Management Modal  -->
         <div class="modal fade" id="modalFamilyMGMT" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -148,6 +148,37 @@
         </div>
         <!-- END Add Cuisine Modal  -->
 
+        <!-- Add Cuisine Modal  -->
+        <div class="modal fade" id="modalAddCuisine" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header text-center header-color">
+                        <h4 class="title w-100"><i class="fa fa-pencil-alt"></i> Add Cuisine</h4>
+                        <button type="button" class="close" style="color: white;" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body mx-3">
+                        <div class="md-form mb-5">
+                            <i class="glyphicon glyphicon-cutlery prefix grey-text"></i>
+                            <input type="text" id="defaultForm-cuisine" class="form-control form-control-lg">
+                            <label for="defaultForm-cuisine">Cuisine Name</label>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer col-xs-12"></div>
+                    <div class="col-xs-12 text-center">
+                        <button type="button" class="btn btn-primary" id="btn-add-cuisine" data-dismiss="modal">Add</button>
+                        <button type="button" class="btn btn-light" id="btn-cancel" data-dismiss="modal">Cancel</button>
+                    </div>
+                    <br />
+
+                </div>
+            </div>
+        </div>
+        <!-- END Add Cuisine Modal  -->
 
     </nav>
 </body>
