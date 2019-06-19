@@ -28,7 +28,8 @@
     <!-- Dynamic functionality -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    
+
+    <script type="text/javascript" src="js/mumsrecipes-script.js" async></script>
     <title>Mum's Recipes</title>
 </head>
 
@@ -162,7 +163,7 @@
                     <div class="modal-body mx-3">
                         <div class="md-form mb-5">
                             <i class="glyphicon glyphicon-cutlery prefix grey-text"></i>
-                            <input type="text" id="add-cuisine-form" class="form-control form-control-lg">
+                            <input type="text" id="add-cuisine-form" class="form-control form-control-lg" onkeypress="return isCuisineValid(event)">
                             <label for="add-cuisine-form">Cuisine Name</label>
                         </div>
                     </div>
