@@ -24,12 +24,21 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
     <!---------------------------------------------------------------------------------------------------->
 
+    <!-- FIREBASE update the version number as needed -->
+    <script defer src="/__/firebase/5.0.4/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.0.4/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.0.4/firebase-database.js"></script>
+    <script defer src="/__/firebase/5.0.4/firebase-storage.js"></script>
+    <script defer src="/__/firebase/5.0.4/firebase-firestore.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
 
     <!-- Dynamic functionality -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
-    <script type="text/javascript" src="js/mumsrecipes-script.js" async></script>
+    <script type="text/javascript" src="js/mumsrecipes-before.js" async></script>
     <title>Mum's Recipes</title>
 </head>
 
@@ -82,7 +91,8 @@
 
             <ul class="navbar-nav navbar-right">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown"></a>
+                    <a class="nav-link dropdown-toggle" href="" id="userLogin" data-toggle="dropdown">Name</a>
+<!--                    <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown"></a>-->
                     <div class="dropdown-menu">
                         <!-- Family Button -->
                         <a class="dropdown-item" data-toggle="modal" data-target="#modalFamilyMGMT" style="font-size: 14px;"><i class="fas fa-users"></i> Family</a>
@@ -414,6 +424,23 @@
 
     </nav>
 </body>
+
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDO_g-WNcihGvWpwLJs-SsvHFSSWouMY_8",
+        authDomain: "mum-s-recipe.firebaseapp.com",
+        databaseURL: "https://mum-s-recipe.firebaseio.com",
+        projectId: "mum-s-recipe",
+        storageBucket: "mum-s-recipe.appspot.com",
+        messagingSenderId: "319594133425"
+    };
+    firebase.initializeApp(config);
+</script>
+
+
+<script type="text/jscript" src="js/mumsrecipes-after.js"></script>
 
 <!-- For the use of md forms -->
 <!-- JQuery -->

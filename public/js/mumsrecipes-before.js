@@ -16,12 +16,14 @@ function addCuisine() {
 
     // Get the cuisine name that needs to be added.
     var cuisineToAdd = document.getElementById("add-cuisine-form").value;
+    // Get name of user.
 
-    if (cuisineNameToAdd.length == 0) {
+
+    if (cuisineToAdd.length == 0) {
         alert("Please enter cuisine.");
-        $("#modalCuisineForm").modal();
+        $("#modalAddCuisine").modal();
     } else {
-        // Connecting to "receipes" database
+        // Connecting to user's database
         const db_cuisines = firebase.firestore().collection("cuisine").doc("entire_list");
 
         var cuisineArray;
